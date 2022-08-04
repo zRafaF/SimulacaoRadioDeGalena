@@ -1,0 +1,333 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Assets/Main.gd" type="Script" id=1]
+[ext_resource path="res://Assets/FiltroButton.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Circuito.png" type="Texture" id=3]
+[ext_resource path="res://Assets/GreenBoard.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Transmition settings.png" type="Texture" id=5]
+[ext_resource path="res://Assets/RetificadorButton.png" type="Texture" id=6]
+[ext_resource path="res://Assets/SintonizadorButton.png" type="Texture" id=7]
+[ext_resource path="res://Assets/OutputButton.png" type="Texture" id=8]
+[ext_resource path="res://Assets/InfoBoard.png" type="Texture" id=9]
+
+[node name="Main" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Ponto2" type="Node2D" parent="."]
+position = Vector2( -50, -200 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Ponto3" type="Node2D" parent="."]
+position = Vector2( 779, 272 )
+
+[node name="Ponto4" type="Node2D" parent="."]
+position = Vector2( 124, 222 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -244.0
+margin_top = -93.0
+margin_right = -82.0
+margin_bottom = 38.0
+
+[node name="TransmitionSettings" type="Sprite" parent="."]
+position = Vector2( 429, 563 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="SliderPeriodoModulado" type="HSlider" parent="TransmitionSettings"]
+margin_left = -420.0
+margin_top = -44.0
+margin_right = -248.0
+margin_bottom = -15.0
+rect_pivot_offset = Vector2( 86, 85 )
+min_value = 0.009
+max_value = 0.08
+step = 0.0
+value = 0.05
+
+[node name="SliderPeriodoCarrier" type="HSlider" parent="TransmitionSettings"]
+margin_left = -420.0
+margin_top = 104.0
+margin_right = -248.0
+margin_bottom = 133.0
+rect_pivot_offset = Vector2( 86, 85 )
+min_value = 0.08
+max_value = 0.5
+step = 0.01
+value = 0.29
+
+[node name="SliderPeriodoCarrierVal" type="Label" parent="TransmitionSettings/SliderPeriodoCarrier"]
+margin_left = 2.0
+margin_top = 21.0
+margin_right = 42.0
+margin_bottom = 35.0
+text = "..."
+
+[node name="Label" type="Label" parent="TransmitionSettings"]
+margin_left = -420.0
+margin_top = 84.0
+margin_right = -380.0
+margin_bottom = 98.0
+text = "Frequência do portador"
+
+[node name="Label2" type="Label" parent="TransmitionSettings"]
+margin_left = -420.0
+margin_top = -64.0
+margin_right = -378.0
+margin_bottom = -50.0
+text = "Frequência sinal senoidal"
+
+[node name="Label3" type="Label" parent="TransmitionSettings"]
+margin_left = -420.0
+margin_top = -158.0
+margin_right = -258.0
+margin_bottom = -144.0
+rect_scale = Vector2( 1.2, 1.2 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 1
+custom_constants/shadow_as_outline = 0
+text = "Config. da transmissão"
+
+[node name="Label4" type="Label" parent="TransmitionSettings"]
+margin_left = -188.0
+margin_top = -493.0
+margin_right = -26.0
+margin_bottom = -479.0
+rect_scale = Vector2( 1.2, 1.2 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 1
+custom_constants/shadow_as_outline = 0
+text = "Sinal AM transmitido"
+align = 1
+
+[node name="GreenBoard" type="Sprite" parent="TransmitionSettings"]
+position = Vector2( -90, -337 )
+scale = Vector2( 0.8, 0.8 )
+z_index = -10
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Ponto0" type="Node2D" parent="."]
+position = Vector2( 200, 650 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Ponto1" type="Node2D" parent="."]
+position = Vector2( 200, 500 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="PontoRetificador" type="Node2D" parent="."]
+position = Vector2( 753, 663 )
+scale = Vector2( 1.24417, 1.63488 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="PontoSintonizador" type="Node2D" parent="."]
+position = Vector2( 753, 620 )
+scale = Vector2( 1.24417, 1.63488 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="PontoSaida" type="Node2D" parent="."]
+position = Vector2( 753, 620 )
+scale = Vector2( 1.24417, 1.63488 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Control" type="Control" parent="."]
+margin_left = 962.5
+margin_top = 552.5
+margin_right = 1002.5
+margin_bottom = 592.5
+
+[node name="InfoBoard" type="Sprite" parent="Control"]
+position = Vector2( 24.5, -15.5 )
+scale = Vector2( 0.66875, 0.581667 )
+z_index = -1
+texture = ExtResource( 9 )
+
+[node name="RetificadorInfo" type="Control" parent="Control"]
+visible = false
+margin_left = 72.5
+margin_top = -10.5
+margin_right = 112.5
+margin_bottom = 29.5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/RetificadorInfo"]
+margin_left = -282.0
+margin_top = -141.0
+margin_right = 180.0
+margin_bottom = -2.0
+text = "No circuito do Rádio de Galena representado acima o diodo, comumente utilizado o de Germânio devido a sua pequena tensão de condução, realiza a função de retificar o sinal recebido.
+
+Após ser retificado o sinal fica da seguinte maneira:
+"
+
+[node name="SintonizadorInfo" type="Control" parent="Control"]
+visible = false
+margin_left = 72.5
+margin_top = -10.5
+margin_right = 112.5
+margin_bottom = 29.5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/SintonizadorInfo"]
+margin_left = -282.0
+margin_top = -141.0
+margin_right = 188.0
+margin_bottom = -2.0
+bbcode_enabled = true
+bbcode_text = "O sintonizador tem como função estabelecer qual frequência estará sendo decodificada, ele é formado por um [b]indutor[/b] e um [b]capacitor[/b], a alteração dos valores de indutância e capacitância alteram a frequência para que assim haja uma ressonância com o sinal sendo recebido.
+
+Abaixo está representada uma sintonização perfeita, ou seja, a frequência do portador é exatamente igual a do sintonizador.
+"
+text = "O sintonizador tem como função estabelecer qual frequência estará sendo decodificada, ele é formado por um indutor e um capacitor, a alteração dos valores de indutância e capacitância alteram a frequência para que assim haja uma ressonância com o sinal sendo recebido.
+
+Abaixo está representada uma sintonização perfeita, ou seja, a frequência do portador é exatamente igual a do sintonizador.
+"
+
+[node name="SaidaInfo" type="Control" parent="Control"]
+margin_left = 72.5
+margin_top = -10.5
+margin_right = 112.5
+margin_bottom = 29.5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/SaidaInfo"]
+margin_left = -282.0
+margin_top = -141.0
+margin_right = 187.0
+margin_bottom = 24.0
+text = "A saída é o resultado de todas as operações previamente realizadas com o sinal, em uma situação ideal o sinal de saída será exatamente igual ao sinal inicialmente transmitido, entretanto na prática tal resultado nem sempre é atingido. O sinal de saída gerado por um rádio de galena é bem fraco, fazendo necessário o uso de alto falantes de alta impedância ou amplificadores de sinais para que o resultado seja audível.
+
+Abaixo está uma representação do sinal de saída:
+"
+
+[node name="FiltroInfo" type="Control" parent="Control"]
+visible = false
+margin_left = 72.5
+margin_top = -10.5
+margin_right = 112.5
+margin_bottom = 29.5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/FiltroInfo"]
+margin_left = -282.0
+margin_top = -141.0
+margin_right = 10.0
+margin_bottom = -2.0
+text = "Filtro Passa-Baixa (Low-pass filter) é formado por um circuito RC, ele atua de forma a interpolar a amplitude do sinal, em suma, diminui a frequência do sinal de volta à original.
+"
+
+[node name="Circuito" type="Sprite" parent="."]
+position = Vector2( 966, 257 )
+texture = ExtResource( 3 )
+
+[node name="BotaoSintonizador" type="Button" parent="Circuito"]
+margin_left = -251.0
+margin_top = -147.0
+margin_right = -108.0
+margin_bottom = 64.0
+rect_pivot_offset = Vector2( 53, 119 )
+icon = ExtResource( 7 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="BotaoRetificador" type="Button" parent="Circuito"]
+margin_left = -91.0
+margin_top = -144.0
+margin_right = 7.0
+margin_bottom = -51.0
+rect_pivot_offset = Vector2( 53, 119 )
+icon = ExtResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="BotaoFiltro" type="Button" parent="Circuito"]
+margin_left = 29.0
+margin_top = -143.0
+margin_right = 107.0
+margin_bottom = 63.0
+rect_pivot_offset = Vector2( 53, 119 )
+icon = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="BotalSinalSaida" type="Button" parent="Circuito"]
+margin_left = 129.0
+margin_top = -123.0
+margin_right = 263.0
+margin_bottom = 57.0
+rect_pivot_offset = Vector2( 53, 119 )
+icon = ExtResource( 8 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="SliderPeriodoSintonizador" type="HSlider" parent="Circuito"]
+margin_left = -252.0
+margin_top = 65.0
+margin_right = -108.0
+margin_bottom = 93.0
+rect_pivot_offset = Vector2( 86, 85 )
+min_value = 0.08
+max_value = 0.5
+step = 0.01
+value = 0.29
+
+[node name="SliderPeriodoSintonizadorVal" type="Label" parent="Circuito/SliderPeriodoSintonizador"]
+margin_left = 1.0
+margin_top = 24.0
+margin_right = 41.0
+margin_bottom = 38.0
+text = "..."
+
+[node name="Label" type="Label" parent="Circuito"]
+margin_left = -184.0
+margin_top = -239.0
+margin_right = 53.0
+margin_bottom = -208.0
+rect_scale = Vector2( 1.2, 1.2 )
+text = "Rádio de galena, pressione um dos 
+componentes para mais informações"
+align = 1
+
+[node name="Label" type="Label" parent="."]
+modulate = Color( 0.890196, 0.984314, 0.545098, 1 )
+margin_left = 10.0
+margin_top = 13.0
+margin_right = 246.0
+margin_bottom = 79.0
+text = "Simulação Rádio de Galena
+
+Execução: Rafael Farias
+"
+
+[connection signal="value_changed" from="TransmitionSettings/SliderPeriodoModulado" to="." method="_on_SliderPeriodoModulado_value_changed"]
+[connection signal="value_changed" from="TransmitionSettings/SliderPeriodoCarrier" to="." method="_on_SliderPeriodoCarrier_value_changed"]
+[connection signal="pressed" from="Circuito/BotaoSintonizador" to="." method="_on_BotaoSintonizador_pressed"]
+[connection signal="pressed" from="Circuito/BotaoRetificador" to="." method="_on_BotaoRetificador_pressed"]
+[connection signal="pressed" from="Circuito/BotaoFiltro" to="." method="_on_BotaoFiltro_pressed"]
+[connection signal="pressed" from="Circuito/BotalSinalSaida" to="." method="_on_BotalSinalSaida_pressed"]
+[connection signal="value_changed" from="Circuito/SliderPeriodoSintonizador" to="." method="_on_SliderPeriodoSintonizador_value_changed"]
